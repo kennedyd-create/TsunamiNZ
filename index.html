@@ -892,6 +892,125 @@ details.working[open] > summary::before { content:'▾ '; }
 .srclink.alt:hover { background:#002066; color:#fff; }
 .dark .srclink.alt { background:#0f172a; color:#93c5fd; border-color:#334155; }
 
+/* ============ CERTIFICATE ============ */
+.cert-card { position:relative; overflow:hidden; background:linear-gradient(175deg,#f7fafc 0%,#eaf1f8 100%);
+  border:1px solid #a9c6e3; border-radius:1rem; padding:1.75rem 1.25rem; box-shadow:0 18px 48px -20px rgba(0,32,102,.35);
+}
+@media(min-width:768px){ .cert-card { padding:3rem 3.5rem; } }
+.dark .cert-card { background:linear-gradient(175deg,#182236 0%,#0f1729 100%); border-color:#3d4d66; }
+.cert-frame { position:absolute; inset:.55rem; border:2px solid var(--whs-gold); border-radius:.7rem; opacity:.55; pointer-events:none; }
+.dark .cert-frame { opacity:.4; }
+.cert-frame::before, .cert-frame::after,
+.cert-frame2::before, .cert-frame2::after { content:''; position:absolute; width:20px; height:20px; border:var(--whs-gold) solid; opacity:.9; }
+.cert-frame::before { top:-2px; left:-2px; border-width:3px 0 0 3px; }
+.cert-frame::after { top:-2px; right:-2px; border-width:3px 3px 0 0; }
+.cert-frame2 { position:absolute; inset:.55rem; pointer-events:none; }
+.cert-frame2::before { bottom:-2px; left:-2px; border-width:0 0 3px 3px; }
+.cert-frame2::after { bottom:-2px; right:-2px; border-width:0 3px 3px 0; }
+.cert-water { position:absolute; inset:0; opacity:.06; pointer-events:none; }
+.dark .cert-water { opacity:.09; }
+.cert-inner { position:relative; z-index:1; text-align:center; }
+.cert-eyebrow { font-family:'JetBrains Mono',monospace; font-size:.68rem; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--whs-goldtext); font-weight:700; }
+.dark .cert-eyebrow { color:#fde047; }
+.cert-title { font-size:1.7rem; font-weight:800; color:var(--whs-dark-blue); letter-spacing:-.01em; margin:.35rem 0 .15rem; }
+@media(min-width:768px){ .cert-title { font-size:2.25rem; } }
+.dark .cert-title { color:#93c5fd; }
+.cert-rule { width:70px; height:3px; margin:.5rem auto 1.1rem; border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--whs-gold),transparent); }
+.cert-for { font-family:Georgia,'Times New Roman',serif; font-style:italic; font-size:.95rem; color:#475569; margin-top:1.6rem; }
+.dark .cert-for { color:#94a3b8; }
+.cert-name-wrap { display:inline-flex; align-items:baseline; gap:.6rem; margin:.4rem 0 .3rem; flex-wrap:wrap; justify-content:center; }
+.cert-name { font-family:Georgia,'Times New Roman',serif; font-size:1.9rem; font-weight:700; color:var(--whs-dark-blue);
+  border-bottom:2px solid var(--whs-gold); padding-bottom:.15rem; }
+@media(min-width:768px){ .cert-name { font-size:2.6rem; } }
+.dark .cert-name { color:#dbeafe; }
+.cert-edit { font-family:'JetBrains Mono',monospace; font-size:.65rem; letter-spacing:.08em; text-transform:uppercase;
+  color:#94a3b8; background:none; border:1px dashed #94a3b8; border-radius:9999px; padding:.2rem .55rem; cursor:pointer;
+  transition:all .2s; white-space:nowrap; }
+.cert-edit:hover { color:var(--whs-dark-blue); border-color:var(--whs-dark-blue); background:rgba(0,32,102,.06); }
+.dark .cert-edit { color:#64748b; border-color:#475569; } .dark .cert-edit:hover { color:#93c5fd; border-color:#93c5fd; }
+.cert-status { font-size:.92rem; color:#334155; max-width:38rem; margin:.6rem auto 0; line-height:1.55; }
+.dark .cert-status { color:#cbd5e1; }
+.cert-status b { color:var(--whs-dark-blue); } .dark .cert-status b { color:#93c5fd; }
+
+.cert-medals { display:flex; flex-wrap:wrap; justify-content:center; gap:1.1rem 1.6rem; margin:1.8rem 0 .4rem; }
+.cert-medal-spot { position:relative; width:5.6rem; }
+@media(min-width:768px){ .cert-medal-spot { width:6.6rem; } }
+.cert-medal-spot::before { content:''; position:absolute; left:50%; top:38%; width:130%; padding-bottom:130%;
+  transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle,rgba(253,224,71,.55) 0%,rgba(253,224,71,0) 70%);
+  opacity:0; transition:opacity .5s; pointer-events:none; }
+.cert-medal-spot.got::before { opacity:1; animation:certGlow 2.6s ease-in-out infinite; }
+@keyframes certGlow { 0%,100%{opacity:.65} 50%{opacity:1} }
+.cert-medal-spot .mseal { width:100% !important; filter:grayscale(.88) opacity(.5); }
+.cert-medal-spot.got .mseal { filter:none; transform:translateY(-2px) scale(1.04); }
+.cert-medal-spot.got .mseal-svg { filter:drop-shadow(0 6px 14px rgba(197,160,89,.55)); }
+
+.cert-wise { text-align:left; background:linear-gradient(135deg,#dcfce7 0%,#f0fdf4 100%); border:1px solid #86efac;
+  border-radius:.65rem; padding:1.1rem 1.25rem; margin-top:1.6rem; }
+.dark .cert-wise { background:linear-gradient(135deg,#0c2c1e 0%,#0f1f18 100%); border-color:#166534; }
+.cert-wise-head { font-weight:800; color:#166534; font-size:1rem; display:flex; align-items:center; gap:.4rem; margin-bottom:.3rem; }
+.dark .cert-wise-head { color:#86efac; }
+.cert-wise p { color:#14532d; font-size:.86rem; margin:0 0 .8rem; }
+.dark .cert-wise p { color:#bbf7d0; }
+.cert-wise-row { display:flex; align-items:center; gap:.6rem; padding:.5rem .2rem; border-top:1px dashed rgba(22,101,52,.25); font-size:.82rem; }
+.dark .cert-wise-row { border-top-color:rgba(134,239,172,.2); }
+.cert-wise-row:first-of-type { border-top:0; }
+.cert-wise-row .nm { flex:1; font-weight:700; color:#14532d; } .dark .cert-wise-row .nm { color:#bbf7d0; }
+.cert-wise-row .tag { font-family:'JetBrains Mono',monospace; font-size:.6rem; letter-spacing:.08em; text-transform:uppercase;
+  font-weight:700; padding:.15rem .5rem; border-radius:9999px; flex:0 0 auto; }
+.cert-wise-row .tag.yes { background:#15803d; color:#fff; } .cert-wise-row .tag.no { background:#cbd5e1; color:#475569; }
+.dark .cert-wise-row .tag.no { background:#334155; color:#94a3b8; }
+.cert-wise-row .initials { flex:0 0 auto; width:7rem; border-bottom:1px solid #86efac; height:1.1rem; }
+.dark .cert-wise-row .initials { border-color:#166534; }
+.cert-wise-row.locked .nm { color:#64748b; } .dark .cert-wise-row.locked .nm { color:#64748b; }
+.cert-wise-row.locked .initials { border-bottom-style:dotted; opacity:.5; }
+
+.cert-stats { display:flex; flex-wrap:wrap; justify-content:center; gap:.4rem .9rem; margin-top:1.6rem;
+  font-family:'JetBrains Mono',monospace; font-size:.68rem; color:#475569; }
+.dark .cert-stats { color:#94a3b8; }
+.cert-stats b { color:var(--whs-dark-blue); font-weight:700; } .dark .cert-stats b { color:#93c5fd; }
+.cert-sub { font-family:'JetBrains Mono',monospace; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:#475569; }
+.dark .cert-sub { color:#94a3b8; }
+.cert-foot { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:.5rem; margin-top:1.8rem;
+  padding-top:1rem; border-top:1px dashed #cbd5e1; }
+.dark .cert-foot { border-top-color:#334155; }
+.cert-sign { text-align:left; font-size:.72rem; color:#64748b; }
+.dark .cert-sign { color:#94a3b8; }
+.cert-sign .line { display:inline-block; width:9rem; border-bottom:1px solid #94a3b8; margin-right:.4rem; height:1rem; }
+.cert-id { font-family:'JetBrains Mono',monospace; font-size:.62rem; letter-spacing:.04em; color:#94a3b8; text-align:right; }
+
+@media print {
+  body.cert-print header, body.cert-print nav, body.cert-print .no-print { display:none !important; }
+  body.cert-print .view { display:none !important; }
+  body.cert-print #view-debrief { display:block !important; }
+  body.cert-print #view-debrief > *:not(#certBlock) { display:none !important; }
+  body.cert-print #certBlock { display:block !important; box-shadow:none !important; }
+  body.cert-print .cert-card { border:2px solid #002066 !important; background:#fff !important; }
+  body.cert-print .cert-water, body.cert-print .cert-medal-spot::before { display:none !important; }
+  body.cert-print .mseal-svg { filter:none !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body.cert-print { background:#fff !important; }
+  /* keep the certificate to a single A4 page */
+  @page { size:A4 portrait; margin:10mm; }
+  body.cert-print #certBlock { page-break-inside:avoid; break-inside:avoid; }
+  body.cert-print .cert-card { padding:1.1rem 1.3rem !important; border-radius:.5rem !important; }
+  body.cert-print .cert-title { font-size:1.5rem !important; margin:.2rem 0 .1rem !important; }
+  body.cert-print .cert-rule { margin:.35rem auto .6rem !important; }
+  body.cert-print .cert-for { margin-top:.7rem !important; font-size:.85rem !important; }
+  body.cert-print .cert-name { font-size:1.6rem !important; }
+  body.cert-print .cert-name-wrap { margin:.25rem 0 .2rem !important; }
+  body.cert-print .cert-status { font-size:.8rem !important; margin-top:.35rem !important; }
+  body.cert-print .cert-medals { margin:.8rem 0 .2rem !important; gap:.5rem .9rem !important; }
+  body.cert-print .cert-medal-spot { width:4.2rem !important; }
+  body.cert-print .cert-wise { margin-top:.8rem !important; padding:.7rem .85rem !important; }
+  body.cert-print .cert-wise p { font-size:.75rem !important; margin-bottom:.45rem !important; }
+  body.cert-print .cert-wise-head { font-size:.9rem !important; }
+  body.cert-print .cert-wise-row { padding:.3rem .15rem !important; font-size:.75rem !important; }
+  body.cert-print .cert-stats { margin-top:.8rem !important; font-size:.62rem !important; }
+  body.cert-print .cert-foot { margin-top:.8rem !important; }
+  body.cert-print #certLogo { width:3rem !important; height:2.3rem !important; margin-bottom:.4rem !important; }
+}
+
 /* sub-tab strip label */
 .subnav-label { display:flex; align-items:baseline; justify-content:center; gap:.6rem; flex-wrap:wrap;
   text-align:center; margin-bottom:.5rem; }
@@ -1106,7 +1225,7 @@ input[type=range] { height:1.5rem; accent-color:#002066; }
   <button role="tab" aria-selected="false" class="nav-btn text-emerald-700 dark:text-emerald-400 font-bold" data-view="warning">📡 The Warning <span class="font-mono text-[10px] opacity-70">A4–5</span></button>
   <button role="tab" aria-selected="false" class="nav-btn text-whs-goldtext dark:text-yellow-400 font-bold" data-view="island">🏝️ The Island <span class="font-mono text-[10px] opacity-70">A6</span></button>
   <button role="tab" aria-selected="false" class="nav-btn text-violet-700 dark:text-violet-400 font-bold" data-view="comms">🎨 The Message <span class="font-mono text-[10px] opacity-70">A7–8</span></button>
-  <button role="tab" aria-selected="false" class="nav-btn text-slate-600 dark:text-slate-400 font-bold" data-view="debrief">🏅 The Debrief</button>
+  <button role="tab" aria-selected="false" class="nav-btn text-slate-600 dark:text-slate-400 font-bold" data-view="debrief">🎓 Certificate</button>
   <button onclick="openWelcome()" title="About this project and our WISE values"
     class="nav-btn text-slate-500 dark:text-slate-500 font-bold">ℹ️ About</button>
 </nav>
@@ -2234,35 +2353,18 @@ input[type=range] { height:1.5rem; accent-color:#002066; }
 
 <!-- ============ VIEW: DEBRIEF ============ -->
 <div class="view space-y-6" id="view-debrief" role="tabpanel">
-  <div class="glass-card p-5 md:p-7">
-    <div class="card-head">
-      <span class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow grid place-items-center text-xl shrink-0">🏅</span>
-      <div class="flex-1">
-        <span class="font-mono text-[11px] uppercase tracking-widest text-rose-700 dark:text-rose-400 font-bold">Debrief</span>
-        <h2 class="text-2xl md:text-3xl font-black text-whs-dark dark:text-blue-300">How did you do?</h2>
-      </div>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-      <div class="panel !p-3 text-center"><div class="font-mono text-2xl font-bold text-whs-dark dark:text-blue-300 tabular-nums" id="statBadges">0/29</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Badges</div></div>
-      <div class="panel !p-3 text-center"><div class="font-mono text-2xl font-bold text-whs-dark dark:text-blue-300 tabular-nums" id="statXP">0</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">XP</div></div>
-      <div class="panel !p-3 text-center"><div class="font-mono text-2xl font-bold text-whs-dark dark:text-blue-300" id="statRank">Trainee</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Rank</div></div>
-      <div class="panel !p-3 text-center"><div class="font-mono text-2xl font-bold text-whs-dark dark:text-blue-300 tabular-nums" id="statWords">0</div><div class="font-mono text-[9px] uppercase tracking-widest text-slate-500 mt-1">Words written</div></div>
-    </div>
-    <div id="debriefList" class="space-y-2 mb-6"></div>
-    <h3 class="font-black text-whs-dark dark:text-blue-300 mb-1">Badge case</h3>
-    <p class="text-xs text-slate-500 mb-3">All 29 badges. Hover or tap for the name.</p>
-    <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2" id="badgeCase"></div>
-  </div>
 
-  <div class="glass-card p-5 md:p-7">
+  <div class="glass-card p-5 md:p-7 no-print">
     <div class="card-head">
+      <span class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow grid place-items-center text-xl shrink-0">🌊</span>
       <div class="flex-1">
         <span class="font-mono text-[11px] uppercase tracking-widest text-whs-goldtext dark:text-yellow-400 font-bold">The last question</span>
         <h2 class="text-xl md:text-2xl font-black text-whs-dark dark:text-blue-300">So — should you stay, or should you go?</h2>
       </div>
     </div>
-    <div class="panel mb-4">
-      <p class="text-sm m-0 text-slate-600 dark:text-slate-400">You started this unit with a question borrowed from a punk song. Now answer it properly, as a geographer. In 150–250 words, explain what you would do if you felt a long, strong earthquake on Waiheke tonight — and, more importantly, <b>why</b>. Use at least three pieces of evidence from this case study, and name your sources.</p>
+    <div class="instruct mb-4">
+      <div class="instruct-label">▸ Do this before you finish</div>
+      <p class="text-sm m-0">You started this unit with a question borrowed from a punk song. Now answer it properly, as a geographer. In 150–250 words, explain what you would do if you felt a long, strong earthquake on Waiheke tonight — and, more importantly, <b>why</b>. Use at least three pieces of evidence from this case study, and name your sources.</p>
     </div>
     <textarea class="write-area !min-h-[13rem]" data-write="d_final" placeholder="If I felt a long or strong earthquake on Waiheke tonight, I would..."></textarea>
     <div class="flex flex-wrap gap-1.5 mt-2">
@@ -2275,14 +2377,72 @@ input[type=range] { height:1.5rem; accent-color:#002066; }
     <div class="font-mono text-[11px] text-slate-500 mt-2" id="finalCount">0 words</div>
   </div>
 
-  <div class="glass-card p-5 md:p-7">
+  <!-- ================= CERTIFICATE ================= -->
+  <div id="certBlock">
+    <div class="cert-card">
+      <div class="cert-frame"></div><div class="cert-frame2"></div>
+      <svg class="cert-water" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path d="M0 120 Q50 90 100 120 T200 120 T300 120 T400 120 T500 120 T600 120 T700 120 T800 120" fill="none" stroke="#002066" stroke-width="3"/>
+        <path d="M0 380 Q50 350 100 380 T200 380 T300 380 T400 380 T500 380 T600 380 T700 380 T800 380" fill="none" stroke="#c5a059" stroke-width="3"/>
+        <circle cx="400" cy="250" r="150" fill="none" stroke="#002066" stroke-width="2"/>
+        <circle cx="400" cy="250" r="190" fill="none" stroke="#002066" stroke-width="1"/>
+      </svg>
+
+      <div class="cert-inner">
+        <div class="shrink-0 bg-white dark:bg-white/95 rounded-xl p-2.5 shadow w-16 h-[3.1rem] mx-auto mb-3 text-whs-dark" id="certLogo"></div>
+        <div class="cert-eyebrow">Waiheke High School &middot; Be Waiheke W.I.S.E.</div>
+        <div class="cert-title">Certificate of Achievement</div>
+        <div class="cert-rule"></div>
+        <div class="cert-sub">Tsunami: Clear and Present Danger &middot; NZ Tsunami Case Study &middot; Year 10 Geography</div>
+
+        <div class="cert-for">This certifies that</div>
+        <div class="cert-name-wrap">
+          <span class="cert-name" id="certName">Student</span>
+          <button class="cert-edit no-print" onclick="renameSelf()" title="Fix your name">✎ not you?</button>
+        </div>
+        <div class="cert-status" id="certStatus"></div>
+
+        <div class="cert-medals" id="certMedals"></div>
+
+        <div class="cert-wise">
+          <div class="cert-wise-head">🎓 Take this to your teacher</div>
+          <p>Each major award below is worth one <b>Waiheke WISE point</b>. Show your teacher this certificate — on screen, printed, or as a screenshot — so they can record a point for every award you've earned.</p>
+          <div id="certWiseList"></div>
+        </div>
+
+        <div class="cert-stats" id="certStats"></div>
+
+        <div class="cert-foot">
+          <div class="cert-sign">Teacher signature <span class="line"></span> Date <span class="line" style="width:5rem"></span></div>
+          <div class="cert-id" id="certId"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-2.5 mt-4 no-print">
+      <button class="chip-btn !bg-whs-dark !text-white !border-whs-dark !px-4 !py-2" onclick="printCertificate()">🖨️ Print my certificate</button>
+      <button class="chip-btn !px-4 !py-2" onclick="downloadWork()">⬇️ Download my whole case study</button>
+      <button class="chip-btn !px-4 !py-2" onclick="openSignIn()">🔁 I'm a different student</button>
+    </div>
+  </div>
+
+  <details class="no-print">
+    <summary class="cursor-pointer font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-whs-dark dark:hover:text-blue-300 select-none py-2">▸ See all 29 badges</summary>
+    <div class="glass-card p-5 md:p-7 mt-2">
+      <h3 class="font-black text-whs-dark dark:text-blue-300 mb-1">Badge case</h3>
+      <p class="text-xs text-slate-500 mb-3">Every badge behind your five major awards. Hover or tap for the name.</p>
+      <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2" id="badgeCase"></div>
+    </div>
+  </details>
+
+  <div class="glass-card p-5 md:p-7 no-print">
     <div class="card-head">
       <div class="flex-1">
         <span class="font-mono text-[11px] uppercase tracking-widest text-slate-500 font-bold">Sources &amp; further reading</span>
         <h2 class="text-lg md:text-xl font-black text-whs-dark dark:text-blue-300">Everything in this case study comes from here</h2>
       </div>
     </div>
-    <div class="grid sm:grid-cols-2 gap-2 text-sm" id="sourceList"></div>
+    <div class="grid sm:grid-cols-2 gap-2 text-sm min-w-0" id="sourceList"></div>
     <p class="text-xs text-slate-500 mt-4 mb-0">Figures for the 5 March 2021 earthquakes come from GeoNet, USGS and NEMA. Magnitude and depth estimates were revised in the days after the events, which is itself part of what this unit is about — always check the date on a source, and say which one you used.</p>
   </div>
 </div>
@@ -3213,7 +3373,7 @@ async function rememberProfile(name){
 
 /* ============ STATE ============ */
 const BLANK = ()=>({
-  badges:{}, writing:{}, name:'', scores:{}, xp:0, streak:0, lastDay:'', awarded:{}, dark:false,
+  badges:{}, writing:{}, name:'', scores:{}, xp:0, streak:0, lastDay:'', awarded:{}, dark:false, certDate:null,
   checks:{}, probs:{}, sol:[{n:'',d:'',s:[3,3,3]},{n:'',d:'',s:[3,3,3]},{n:'',d:'',s:[3,3,3]},{n:'',d:'',s:[3,3,3]}],
   ticks:{}, brief:{video:false, map:[], time:[], decide:{}, race:false, data:false},
   sci:{plates:[], causes:[], sort:{}, mega:false},
@@ -3287,8 +3447,6 @@ function paintXP(){
   $('#xpBar').style.width=(into/XP_PER_LEVEL*100)+'%';
   $('#xpNext').textContent=(XP_PER_LEVEL-into)+' XP to Level '+(lvl+1);
   const ml=$('#miniLvl'); if(ml) ml.textContent=lvl;
-  const sx=$('#statXP'), sr=$('#statRank');
-  if(sx) sx.textContent=S.xp; if(sr) sr.textContent=rankName();
 }
 function once(key,n){ if(S.awarded[key])return; S.awarded[key]=1; addXP(n); }
 
@@ -3363,7 +3521,6 @@ function paintBadges(){
     return `<div class="mseal ${got?'earned':''}" id="seal-${m.id}" title="${esc(m.word)} — ${have}/${m.of.length}">${medalSVG(m,got,have)}</div>`;}).join('');
   const n=BADGES.filter(b=>S.badges[b.id]).length;
   $('#badge-count').textContent=n;
-  const sb=$('#statBadges'); if(sb) sb.textContent=n+'/'+BADGES.length;
   const ms=$('#miniSummary'); if(ms) ms.textContent=n+' of '+BADGES.length+' badges';
   const mb=$('#miniBadges'); if(mb) mb.textContent=n;
   $$('.badge-chip').forEach(c=>{
@@ -3599,7 +3756,6 @@ function onWrite(k){
   if(k&&k.startsWith('pi_')) checkPitch();
   if(k&&k.startsWith('w_scen')) checkScen();
   if(k==='i_prob'||k==='i_probstate') checkProb();
-  const sw=$('#statWords'); if(sw) sw.textContent=totalWords();
 }
 
 /* ============ GENERIC TASK RENDERER ============ */
@@ -3738,6 +3894,7 @@ document.addEventListener('keydown',e=>{
 
 /* ============ PRINT: open everything first ============ */
 window.addEventListener('beforeprint',()=>{
+  if(document.body.classList.contains('cert-print')) return;   // certificate prints alone
   $$('.subpanel').forEach(p=>{ if(p.style.display==='none'){ p.dataset.hid='1'; p.style.display=''; } });
   $$('details').forEach(d=>{ if(!d.open){ d.dataset.shut='1'; d.open=true; } });
 });
@@ -3809,21 +3966,83 @@ document.addEventListener('keydown',e=>{
 });
 
 /* ============ DEBRIEF ============ */
+/* ============ CERTIFICATE ============ */
+function certId(){
+  const raw=(S.name||'')+'|'+S.xp+'|'+BADGES.filter(b=>S.badges[b.id]).length+'|'+(S.certDate||'');
+  let h=0; for(let i=0;i<raw.length;i++){ h=(h*31 + raw.charCodeAt(i))>>>0; }
+  return 'WHS-TSU-'+h.toString(36).toUpperCase().padStart(6,'0').slice(0,6);
+}
+async function renameSelf(){
+  const who=prompt('Fix your name on the certificate\n(This keeps all your saved progress — it only corrects the spelling.)', S.name||'');
+  if(who===null) return;
+  const n=who.trim(); if(!n || n===S.name) return;
+  S.name=n; save();
+  try{
+    const list=await listProfiles();
+    const rec=list.find(p=>p.id===PROFILE);
+    if(rec) rec.name=n; else list.push({id:PROFILE,name:n,seen:Date.now()});
+    await Store.set(PKEY,JSON.stringify(list));
+  }catch(e){}
+  paintDebrief(); paintStorageChip();
+  toast('Your certificate now reads '+n,'Name updated','✎');
+}
+function printCertificate(){
+  document.body.classList.add('cert-print');
+  setTimeout(()=>window.print(),60);
+  // safety net: if afterprint never fires (some browsers / cancelled dialog), restore anyway
+  clearTimeout(window.__certT);
+  window.__certT = setTimeout(()=>document.body.classList.remove('cert-print'), 8000);
+}
+window.addEventListener('afterprint',()=>{
+  clearTimeout(window.__certT);
+  document.body.classList.remove('cert-print');
+});
+
 function paintDebrief(){
-  const host=$('#debriefList'); if(!host) return;
-  host.innerHTML=MASTERS.map(m=>{
-    const have=m.of.filter(x=>S.badges[x]).length, pct=Math.round(have/m.of.length*100);
-    return `<div class="panel !p-3">
-      <div class="flex items-center gap-3 mb-2">
-        <span class="text-xl">${m.icon}</span>
-        <span class="flex-1 font-bold">${esc(m.word)}</span>
-        <span class="font-mono text-xs text-slate-500">${have}/${m.of.length}</span></div>
-      <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-        <div class="h-full bg-gradient-to-r from-whs-dark to-whs-gold transition-all duration-500" style="width:${pct}%"></div></div>
-      <div class="flex flex-wrap gap-1 mt-2">${m.of.map(id=>{
-        const b=BADGES.find(x=>x.id===id), got=!!S.badges[id];
-        return `<span class="font-mono text-[9px] px-1.5 py-0.5 rounded ${got?'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300':'bg-slate-200 text-slate-500 dark:bg-slate-700'}">${got?'✓':'·'} ${esc(b.name)}</span>`;
-      }).join('')}</div></div>`;}).join('');
+  const cn=$('#certName'); if(!cn) return;
+
+  const box=$('#certLogo'), src=document.querySelector('header svg[role="img"]');
+  if(box && src && !box.hasChildNodes()) box.innerHTML=src.outerHTML;
+
+  cn.textContent = S.name && S.name.trim() ? S.name.trim() : 'Your name here';
+
+  const total=MASTERS.length, have=MASTERS.filter(m=>S.badges[m.id]).length;
+  if(have===total && !S.certDate){ S.certDate=new Date().toISOString(); save(); }
+  const dateStr = S.certDate ? new Date(S.certDate).toLocaleDateString('en-NZ',{day:'numeric',month:'long',year:'numeric'}) : '';
+
+  const st=$('#certStatus');
+  if(st){
+    if(have===0) st.innerHTML=`has begun the independent extension project <b>Tsunami: Clear and Present Danger</b>. Earn every badge in a section to unlock its major award below.`;
+    else if(have<total) st.innerHTML=`has earned <b>${have} of ${total}</b> major awards in the independent extension project <b>Tsunami: Clear and Present Danger</b> so far.`;
+    else st.innerHTML=`has successfully completed all ${total} major awards in the independent extension project <b>Tsunami: Clear and Present Danger</b>, on <b>${dateStr}</b>.`;
+  }
+
+  const mm=$('#certMedals');
+  if(mm) mm.innerHTML=MASTERS.map(m=>{
+    const h=m.of.filter(x=>S.badges[x]).length, got=!!S.badges[m.id];
+    return `<div class="cert-medal-spot ${got?'got':''}" title="${esc(m.word)} — ${h}/${m.of.length} badges">
+      <div class="mseal ${got?'earned':''}">${medalSVG(m,got,h)}</div></div>`;
+  }).join('');
+
+  const wl=$('#certWiseList');
+  if(wl) wl.innerHTML=MASTERS.map(m=>{
+    const got=!!S.badges[m.id];
+    return `<div class="cert-wise-row ${got?'':'locked'}">
+      <span class="nm">${m.icon} ${esc(m.word)}</span>
+      <span class="tag ${got?'yes':'no'}">${got?'Earned — 1 WISE point':'Not yet earned'}</span>
+      <span class="initials" title="Teacher initials"></span>
+    </div>`;
+  }).join('');
+
+  const n=BADGES.filter(b=>S.badges[b.id]).length;
+  const ss=$('#certStats');
+  if(ss) ss.innerHTML=`<span><b>${n}</b>/${BADGES.length} badges</span><span>&middot;</span>
+    <span><b>${S.xp}</b> XP</span><span>&middot;</span>
+    <span><b>${esc(rankName())}</b></span><span>&middot;</span>
+    <span><b>${totalWords()}</b> words written</span><span>&middot;</span>
+    <span>${new Date().toLocaleDateString('en-NZ')}</span>`;
+  const ci=$('#certId'); if(ci) ci.textContent='Certificate ID '+certId();
+
   const bc=$('#badgeCase');
   if(bc) bc.innerHTML=BADGES.map(b=>{
     const got=!!S.badges[b.id];
@@ -3831,12 +4050,12 @@ function paintDebrief(){
       <div class="text-xl leading-none mb-1" style="${got?'':'filter:grayscale(1);opacity:.4'}">${got?b.icon:'🔒'}</div>
       <div class="font-mono text-[8px] uppercase tracking-wide leading-tight ${got?'text-emerald-700 dark:text-emerald-400':'text-slate-400'}">${esc(b.name)}</div></div>`;
   }).join('');
-  const sw=$('#statWords'); if(sw) sw.textContent=totalWords();
+
   const sl=$('#sourceList');
   if(sl && !sl.dataset.built){ sl.dataset.built='1';
-    sl.innerHTML=SOURCES.map(s=>`<a class="panel !p-2.5 hover:!border-whs-gold transition block" target="_blank" rel="noopener" href="${s.u}">
+    sl.innerHTML=SOURCES.map(s=>`<a class="panel !p-2.5 hover:!border-whs-gold transition block min-w-0" target="_blank" rel="noopener" href="${s.u}">
       <span class="font-bold text-whs-dark dark:text-blue-300">${esc(s.t)}</span>
-      <span class="block font-mono text-[10px] text-slate-500 truncate mt-0.5">${esc(s.u)} ↗</span></a>`).join('');
+      <span class="block font-mono text-[10px] text-slate-500 mt-0.5" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(s.u)} ↗</span></a>`).join('');
   }
 }
 
